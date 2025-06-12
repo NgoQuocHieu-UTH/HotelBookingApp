@@ -13,10 +13,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.background
 import androidx.compose.foundation.Image
-
+import androidx.compose.runtime.*
+import kotlinx.coroutines.delay
 
 @Composable
-fun Welcome_Pages(navController: NavController){
+fun Welcome_Pages(navController: NavController) {
+
+    // Tự động chuyển trang sau 1 giây
+    LaunchedEffect(Unit) {
+        delay(1000) // Delay 1 giây
+        navController.navigate("Login") {
+            popUpTo("welcome_page_route") { inclusive = true } // Xoá trang Welcome khỏi backstack nếu cần
+        }
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -27,13 +37,13 @@ fun Welcome_Pages(navController: NavController){
             modifier = Modifier
                 .size(225.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray), // màu nền cho hình tròn
+                .background(Color.LightGray),
             contentAlignment = Alignment.Center
         ) {
             Image(
                 painter = painterResource(id = R.drawable.welcome_logo_image),
                 contentDescription = "Welcome Image",
-                modifier = Modifier.size(225.dp) // ảnh nhỏ hơn hình tròn một chút
+                modifier = Modifier.size(225.dp)
             )
         }
     }

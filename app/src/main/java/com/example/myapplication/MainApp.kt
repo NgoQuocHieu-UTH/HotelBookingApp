@@ -5,6 +5,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
 import com.example.myapplication.view.Welcome_Pages
+import com.example.myapplication.view.Login
+import com.example.myapplication.view.Home
+import com.example.myapplication.view.Profile
 
 import com.example.myapplication.Routes
 
@@ -18,6 +21,14 @@ fun MainApp() {
         composable(Routes.WELCOME_PAGES) {
             Welcome_Pages(navController)
         }
-
+        composable(Routes.LOGIN) {
+            Login(navController)
+        }
+        composable(Routes.HOME) {
+            Home(navController)
+        }
+        composable(Routes.PROFILE) {
+            Profile(navController)
+        }
     }
 }
