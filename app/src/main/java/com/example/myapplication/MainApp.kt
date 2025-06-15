@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.myapplication.view.Welcome_Pages
 import com.example.myapplication.view.Login
 import com.example.myapplication.view.Home
+import com.example.myapplication.view.Search
 import com.example.myapplication.view.Profile
 
 import com.example.myapplication.Routes
@@ -26,6 +27,9 @@ fun MainApp() {
         }
         composable(Routes.HOME) {
             Home(navController)
+        }
+        composable(Routes.SEARCH) {
+            Search(navController)
         }
         composable(Routes.PROFILE) {
             Profile(navController)
