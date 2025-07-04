@@ -301,7 +301,7 @@ fun Search(navController: NavController){
                             Text(
                                 text = "Trang chủ",
                                 fontWeight = FontWeight.Bold,
-                                color = Color(0xFF000000),
+                                color = Color(0xFF7F7F7F),
                                 fontSize = 12.sp
                             )
                         }
@@ -320,7 +320,7 @@ fun Search(navController: NavController){
                             Text(
                                 text = "Tìm kiếm",
                                 fontWeight = FontWeight.Bold,
-                                color = Color(0xFF000000),
+                                color = Color(0xFF007EF2),
                                 fontSize = 12.sp
                             )
                         }
@@ -338,7 +338,7 @@ fun Search(navController: NavController){
                             Text(
                                 text = "Booking",
                                 fontWeight = FontWeight.Bold,
-                                color = Color(0xFF000000),
+                                color = Color(0xFF7F7F7F),
                                 fontSize = 12.sp
                             )
                         }
@@ -356,7 +356,7 @@ fun Search(navController: NavController){
                             Text(
                                 text = "Liên hệ",
                                 fontWeight = FontWeight.Bold,
-                                color = Color(0xFF000000),
+                                color = Color(0xFF7F7F7F),
                                 fontSize = 12.sp
                             )
                         }
@@ -374,7 +374,7 @@ fun Search(navController: NavController){
                             Text(
                                 text = "Profile",
                                 fontWeight = FontWeight.Bold,
-                                color = Color(0xFF000000),
+                                color = Color(0xFF7F7F7F),
                                 fontSize = 12.sp
                             )
                         }

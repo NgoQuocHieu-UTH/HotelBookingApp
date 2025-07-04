@@ -6,4 +6,6 @@ object Routes {
     const val HOME = "Home"
     const val PROFILE = "Profile"
     const val SEARCH = "Search"
+    const val CHAT = "Chat"
+    const val REGISTER = "Register"
 }

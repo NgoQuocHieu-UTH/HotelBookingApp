@@ -1,4 +1,5 @@
 [versions]
+material3 = "1.2.1"
 agp = "8.10.0"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
@@ -11,6 +12,7 @@ composeBom = "2024.09.00"
 navigation = "2.9.0"
 retrofit = "2.9.0"
 coilVersion = "2.6.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

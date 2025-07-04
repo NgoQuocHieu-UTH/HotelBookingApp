@@ -22,7 +22,7 @@ fun Welcome_Pages(navController: NavController) {
     // Tự động chuyển trang sau 1 giây
     LaunchedEffect(Unit) {
         delay(1000) // Delay 1 giây
-        navController.navigate("Search") {
+        navController.navigate("Register") {
             popUpTo("welcome_pages") { inclusive = true }
         }
     }

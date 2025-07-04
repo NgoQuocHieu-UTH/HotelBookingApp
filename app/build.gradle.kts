@@ -52,6 +52,18 @@ dependencies {
     implementation(libs.retrofit)//retrofit
     implementation(libs.converter.gson)//json
     implementation(libs.androidx.navigation.compose) //navigation
+    implementation ("androidx.compose.foundation:foundation:1.6.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    // Firebase Auth
+    implementation("com.google.firebase:firebase-auth:22.3.0")
+
+    // Google Sign-In
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
+
+    // Facebook SDK
+    implementation("com.facebook.android:facebook-login:16.3.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
