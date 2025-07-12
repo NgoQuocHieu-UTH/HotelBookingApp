@@ -9,5 +9,4 @@ data class User(
     val birthday: String,
     val cccd: String,
     val phone: String,
-    val linked_accountval : String,
 )

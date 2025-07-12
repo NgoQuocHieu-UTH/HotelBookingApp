@@ -26,13 +26,13 @@ CREATE TABLE hotels (
 CREATE TABLE rooms (
     room_id INT AUTO_INCREMENT PRIMARY KEY,
     hotel_id INT NOT NULL,
-    room_type VARCHAR(100),         -- Ví dụ: Phòng đơn, phòng đôi, suite...
+    room_type VARCHAR(100) NOT NULL,
+    area INT NOT NULL,
+    bed_type VARCHAR(100) NOT NULL,
+    capacity INT NOT NULL,
     description TEXT,
-    price_per_night DECIMAL(10,2),
-    availability BOOLEAN DEFAULT TRUE, -- TRUE = còn trống, FALSE = đã đặt
-    capacity INT,                      -- Sức chứa (số người)
-    image_url TEXT,                   -- Link ảnh
-    FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id) ON DELETE CASCADE
+    price_per_night DECIMAL(10,2) NOT NULL,
+    image_url TEXT
 );
 
 CREATE TABLE bookings (

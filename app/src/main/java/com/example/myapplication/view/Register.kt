@@ -51,7 +51,7 @@ import com.example.myapplication.remote.RetrofitClient
 
 @Composable
 fun Register(navController: NavController){
-    var user by remember { mutableStateOf("") }
+    var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val coroutineScope = rememberCoroutineScope()
@@ -115,8 +115,8 @@ fun Register(navController: NavController){
             horizontalArrangement = Arrangement.Center
         ){
             OutlinedTextField(
-                value = user,
-                onValueChange = { user = it },
+                value = username,
+                onValueChange = { username= it },
                 label = { Text("Tên người dùng") },
                 modifier = Modifier.fillMaxWidth(0.9f),
                 leadingIcon = {
@@ -206,7 +206,7 @@ fun Register(navController: NavController){
                     coroutineScope.launch {
                         try {
                             val response = RetrofitClient.apiService.registerUser(
-                                RegisterRequest(user, email, password)
+                                RegisterRequest(username, email, password)
                             )
                             if (response.isSuccessful) {
                                 val body = response.body()

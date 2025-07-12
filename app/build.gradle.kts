@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -63,6 +64,18 @@ dependencies {
 
     // Facebook SDK
     implementation("com.facebook.android:facebook-login:16.3.0")
+    implementation (platform("androidx.compose:compose-bom:2024.05.00"))
+
+    implementation ("androidx.compose.ui:ui")
+    implementation ("androidx.compose.foundation:foundation")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("androidx.compose.material3:material3:1.3.0")
+    implementation ("androidx.compose.ui:ui:1.5.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

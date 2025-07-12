@@ -15,18 +15,29 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.*
 import kotlinx.coroutines.delay
-
+import android.content.Context
+import androidx.compose.ui.platform.LocalContext
 @Composable
 fun Welcome_Pages(navController: NavController) {
 
     // Tự động chuyển trang sau 1 giây
+    val context = LocalContext.current
+
+    // Tự động chuyển trang sau 1 giây
     LaunchedEffect(Unit) {
-        delay(1000) // Delay 1 giây
-        navController.navigate("Register") {
-            popUpTo("welcome_pages") { inclusive = true }
+        delay(1000)
+
+        val token = getTokenFromPreferences(context)
+        if (token.isNullOrBlank()) {
+            navController.navigate("Login") {
+                popUpTo("welcome_pages") { inclusive = true }
+            }
+        } else {
+            navController.navigate("Home") {
+                popUpTo("welcome_pages") { inclusive = true }
+            }
         }
     }
-
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -47,4 +58,9 @@ fun Welcome_Pages(navController: NavController) {
             )
         }
     }
+}
+
+fun getTokenFromPreferences(context: Context): String? {
+    val sharedPreferences = context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+    return sharedPreferences.getString("user_token", null)
 }

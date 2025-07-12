@@ -46,6 +46,8 @@ fun Login(navController: NavController) {
     val coroutineScope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
+    val context = LocalContext.current
+
     // UI components
     Column(
         modifier = Modifier
@@ -144,9 +146,9 @@ fun Login(navController: NavController) {
                                     snackbarHostState.showSnackbar("Đăng nhập thành công!")
 
                                     // Store token and navigate to the main screen
-                                    //saveTokenToPreferences(body?.token)
+                                    saveTokenToPreferences(context, body?.token ?: "")
 
-                                    navController.navigate("Profile") {
+                                    navController.navigate("Home") {
                                         popUpTo("Login") { inclusive = true }
                                     }
                                 } else {
